@@ -103,7 +103,7 @@ prompt = "Please ignore all previous instructions. \
 You are an expert copywriter who creates content outlines. You have a " + tone +" tone of voice. You have a " + style + " \
 writing style. Create a long form content outline in the english language for the article titled "+"'"+ topic +"'" +".  The content \
 outline should include a minimum of 20 headings and subheadings. The outline should be extensive and it should cover \
-the entire topic. Create detailed subheadings that are engaging and catchy. Do not write the article, please only write  \
+the entire topic. Create detailed subheadings that are engaging and catchy. Put each subheadding on a separate line. Do not write the article, please only write  \
 the outline of the article. Do not self reference. Do not explain what you are doing."
     
 with st.form("Response_form", border=False, clear_on_submit=True):
