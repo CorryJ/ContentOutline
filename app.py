@@ -100,7 +100,7 @@ if "messages" not in st.session_state:
 #if topic := topic:
 prompt = "Please ignore all previous instructions. \
 You are an expert copywriter who creates content outlines. You have a " + tone +" tone of voice. You have a " + style + " Analytical \
-writing style. Create a long form content outline in the english language for the article titled "+"'"+ tone +"'" +".  The content \
+writing style. Create a long form content outline in the english language for the article titled "+"'"+ topic +"'" +".  The content \
 outline should include a minimum of 20 headings and subheadings. The outline should be extensive and it should cover \
 the entire topic. Create detailed subheadings that are engaging and catchy. Do not write the article, please only write  \
 the outline of the article. Do not self reference. Do not explain what you are doing."
