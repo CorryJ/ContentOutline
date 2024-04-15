@@ -35,7 +35,7 @@ with col3:
    st.header("")
 
 
-st.markdown('<div style="text-align: center; font-size:36px;"><strong>Content Titles Generator by The SEO Works<strong></div>', unsafe_allow_html=True)
+st.markdown('<div style="text-align: center; font-size:36px;"><strong>Content Outline Generator by The SEO Works<strong></div>', unsafe_allow_html=True)
 st.markdown('<div style="text-align: center; font-size:22px;"></div>', unsafe_allow_html=True)
 
 # Spacers for layout purposes
@@ -58,15 +58,16 @@ st.markdown(
 with st.expander("How it works"):
     st.write("Introducing The SEO Works Content Outline Generator. Select your parameters below and click go!")
 
+topic = st.text_input("Enter the title of your article", placeholder="Enter the title of your article and press enter")
 
 col1, col2 = st.columns(2)
 
-with col1:
-   topic = st.text_input("Enter your topic", placeholder="Add your topic and press enter")
+# with col1:
+   #topic = st.text_input("Enter the title of your article", placeholder="Enter the title of your article and press enter")
   
 
-with col2:
-   no_of_titles_to_generate = st.text_input("Add number of titles to generate", placeholder="Add number of titles to generate")
+#with col2:
+   # no_of_titles_to_generate = st.text_input("Add number of titles to generates", placeholder="Add number of titles to generate")
 
 
 col1, col2 = st.columns(2)
@@ -97,9 +98,8 @@ if "openai_model" not in st.session_state:
 if "messages" not in st.session_state:
     st.session_state.messages = []
         
-#if topic := topic:
 prompt = "Please ignore all previous instructions. \
-You are an expert copywriter who creates content outlines. You have a " + tone +" tone of voice. You have a " + style + " Analytical \
+You are an expert copywriter who creates content outlines. You have a " + tone +" tone of voice. You have a " + style + " \
 writing style. Create a long form content outline in the english language for the article titled "+"'"+ topic +"'" +".  The content \
 outline should include a minimum of 20 headings and subheadings. The outline should be extensive and it should cover \
 the entire topic. Create detailed subheadings that are engaging and catchy. Do not write the article, please only write  \
@@ -110,7 +110,7 @@ with st.form("Response_form", border=False, clear_on_submit=True):
     #with st.chat_message("user"):
     #    st.markdown("Here are the title ideas for your content")
 
-    submitted = st.form_submit_button("Get your content titles!")
+    submitted = st.form_submit_button("Get your content outline!")
     if submitted:
             st.session_state.messages.append({"role": "user", "content": prompt})
 
@@ -142,5 +142,4 @@ st.markdown('<div style="text-align: center; font-size:22px;">We are the Digital
 st.write("#")
 
 st.markdown('<div style="text-align: center; font-size:14px;">Check out our other <a href = "https://www.seoworks.co.uk/resources/downloads/">resources</a>.</div>', unsafe_allow_html=True)
-
 
